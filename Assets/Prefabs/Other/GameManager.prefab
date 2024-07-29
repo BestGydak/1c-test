@@ -126,6 +126,7 @@ MonoBehaviour:
   _spawner: {fileID: 0}
   _minKillGoal: 5
   _maxKillGoal: 5
+  _playerDamage: {fileID: 11400000, guid: e1a6d323d6bfd5643afc3b0045185d54, type: 2}
   _immediateStart: 0
   Won:
     m_PersistentCalls:
@@ -178,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 341518359378781687}
+  _inputReader: {fileID: 11400000, guid: 0e9d9a294da577845932de3ba6c6e678, type: 2}
 --- !u!1 &4595521991532341004
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +312,7 @@ Transform:
   - {fileID: 7187694362809349817}
   - {fileID: 7522849285117649437}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &341518359378781687
 MonoBehaviour:
@@ -327,7 +329,7 @@ MonoBehaviour:
   <DefeatChecker>k__BackingField: {fileID: 4730244735783362769}
   <VictoryChecker>k__BackingField: {fileID: 8434744965530935996}
   <Spawner>k__BackingField: {fileID: 0}
-  _immediateStart: 1
+  _immediateStart: 0
   _stateMachine: {fileID: 8268984838976883495}
   _winState: {fileID: 8644370473222915285}
   _lostState: {fileID: 2326943056810253027}

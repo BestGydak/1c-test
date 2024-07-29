@@ -3,6 +3,9 @@ using UnityEngine.Events;
 
 public class EnemyFinishLine : MonoBehaviour
 {
+    [SerializeField] private DamageType _gameDamage;
+    [SerializeField] private SFX _enemyKillSFX;
+    [SerializeField] private SoundManagerEventChannel _soundChannel;
     public UnityEvent<BaseEnemy> EnemyCrossed;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -11,6 +14,7 @@ public class EnemyFinishLine : MonoBehaviour
             return;
 
         EnemyCrossed.Invoke(enemy);
-        enemy.Kill();
+        enemy.Kill(_gameDamage);
+        _soundChannel.RequestPlay(_enemyKillSFX);
     }
 }

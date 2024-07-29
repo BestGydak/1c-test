@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _minCooldownInSeconds;
     [SerializeField] private float _maxCooldownInSeconds;
     [SerializeField] private bool _startSpawnOnStart;
+    [SerializeField] private DamageType _gameDamage;
 
     public UnityEvent<BaseEnemy> Spawned;
 
@@ -34,10 +35,11 @@ public class Spawner : MonoBehaviour
         StopCoroutine(_spawnCoroutine);
     }
 
-    public void RemoveAllEnemies()
+    public void KillAll()
     {
-        foreach(var enemy in _aliveEnemies)
-            Destroy(enemy.gameObject);
+        var enemies = new List<BaseEnemy>(_aliveEnemies);
+        foreach (var enemy in enemies)
+            enemy.Kill(_gameDamage);
         _aliveEnemies.Clear();
     }
 
@@ -61,7 +63,7 @@ public class Spawner : MonoBehaviour
         Spawned.Invoke(newEnemy);
     }
 
-    private void OnDied(BaseEnemy newEnemy)
+    private void OnDied(BaseEnemy newEnemy, DamageType damageType)
     {
         newEnemy.Died.RemoveListener(OnDied);
         _aliveEnemies.Remove(newEnemy);

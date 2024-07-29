@@ -6,6 +6,7 @@ public class LinearProjectile : BaseProjectile
     [SerializeField] private float _speed;
     [SerializeField] private int _damage;
     [SerializeField] private float _liveTimeInSeconds;
+    [SerializeField] private DamageType _intendedDamage;
 
     public void Start()
     {
@@ -18,7 +19,7 @@ public class LinearProjectile : BaseProjectile
 
         if(collisionObject.TryGetComponent<IDamageable>(out var damageable))
         {
-            damageable.Damage(_damage);
+            damageable.Damage(_damage, _intendedDamage);
             Destroy(gameObject);
             return;
         }

@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 5977763287601885276}
   - component: {fileID: 1272691825595309448}
   - component: {fileID: 1579484897244435604}
+  - component: {fileID: 7444889232662828877}
   m_Layer: 9
   m_Name: StandardEnemy
   m_TagString: Untagged
@@ -219,6 +220,28 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _rigidbody: {fileID: 5977763287601885276}
-  _currentHealth: 5
+  _animator: {fileID: 5011037591598278924}
   _currentSpeed: 5
-  CurrentMoveDirection: {x: 0, y: -1}
+  <CurrentMoveDirection>k__BackingField: {x: 0, y: 0}
+  _hurtSFX: {fileID: 11400000, guid: 3ed23a3f027b66941b183f2ddc0932b4, type: 2}
+  _soundChannel: {fileID: 11400000, guid: 5d25059bf5d3a084f94dea2bb66017f3, type: 2}
+  <Health>k__BackingField: {fileID: 7444889232662828877}
+--- !u!114 &7444889232662828877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2634923763759407347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53603ba3c4ce62642908df6cc570d4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <CurrentHealth>k__BackingField: 1
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []

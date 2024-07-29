@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910398439165623509}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.47, y: -2.88, z: -10.029163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8891014749892357369}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7923966084812704032
 MonoBehaviour:
@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb79774ec0526a4d8d5014629ef7ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameDamage: {fileID: 11400000, guid: dcedc4ac0d45b8d4dba2e90760165787, type: 2}
+  _enemyKillSFX: {fileID: 11400000, guid: 1b93f4a75fc375b4592cd6a0e80da338, type: 2}
+  _soundChannel: {fileID: 11400000, guid: 5d25059bf5d3a084f94dea2bb66017f3, type: 2}
   EnemyCrossed:
     m_PersistentCalls:
       m_Calls: []
@@ -81,7 +84,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.465256, y: -0.10932982}
+  m_Offset: {x: 4.465256, y: -0.063699126}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -92,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.401124, y: 0.32100463}
+  m_Size: {x: 9.401124, y: 0.41226602}
   m_EdgeRadius: 0
 --- !u!1 &3758650038979996977
 GameObject:
@@ -119,8 +122,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3758650038979996977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4768, y: -0.1058, z: 10.029163}
-  m_LocalScale: {x: 9.9535, y: 0.25923532, z: 1}
+  m_LocalPosition: {x: 4.4693, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540293298183706132}
@@ -164,15 +167,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -724086495
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1168886111, guid: 2c21440539492ef4b9dcc6e576233a29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 2
+  m_Size: {x: 8.971042, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

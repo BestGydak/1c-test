@@ -6,6 +6,7 @@ public class VictoryChecker : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private int _minKillGoal;
     [SerializeField] private int _maxKillGoal;
+    [SerializeField] private DamageType _playerDamage;
     [SerializeField] private bool _immediateStart;
 
     public UnityEvent Won;
@@ -51,10 +52,11 @@ public class VictoryChecker : MonoBehaviour
         enemy.Died.AddListener(OnEnemyDied);
     }
 
-    private void OnEnemyDied(BaseEnemy enemy)
+    private void OnEnemyDied(BaseEnemy enemy, DamageType damageType)
     {
         enemy.Died.RemoveListener(OnEnemyDied);
-        CurrentKillGoal -= 1;
+        if(damageType == _playerDamage)
+            CurrentKillGoal -= 1;
     }
 
     private bool TryWin()

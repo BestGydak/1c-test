@@ -113,6 +113,7 @@ MonoBehaviour:
   _speed: 10
   _damage: 1
   _liveTimeInSeconds: 5
+  _intendedDamage: {fileID: 11400000, guid: e1a6d323d6bfd5643afc3b0045185d54, type: 2}
 --- !u!1 &6460707792621005920
 GameObject:
   m_ObjectHideFlags: 0
