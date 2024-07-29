@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     public UnityEvent<BaseEnemy> Spawned;
 
     private Coroutine _spawnCoroutine;
+    private HashSet<BaseEnemy> _aliveEnemies = new();
 
     private void Start()
     {
@@ -33,6 +34,13 @@ public class Spawner : MonoBehaviour
         StopCoroutine(_spawnCoroutine);
     }
 
+    public void RemoveAllEnemies()
+    {
+        foreach(var enemy in _aliveEnemies)
+            Destroy(enemy.gameObject);
+        _aliveEnemies.Clear();
+    }
+
     private IEnumerator SpawnCoroutine()
     {
         while(true)
@@ -48,6 +56,14 @@ public class Spawner : MonoBehaviour
         var newEnemy = enemyFactory.Create();
         var spawnPoint = _spawnPoints.GetRandom();
         newEnemy.transform.position = spawnPoint.position;
+        _aliveEnemies.Add(newEnemy);
+        newEnemy.Died.AddListener(OnDied);
         Spawned.Invoke(newEnemy);
+    }
+
+    private void OnDied(BaseEnemy newEnemy)
+    {
+        newEnemy.Died.RemoveListener(OnDied);
+        _aliveEnemies.Remove(newEnemy);
     }
 }

@@ -11,7 +11,6 @@ public class AutoAttack : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_currentCooldown);
         TryAttack();
     }
 
