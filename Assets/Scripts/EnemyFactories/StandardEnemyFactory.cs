@@ -3,7 +3,7 @@
 [CreateAssetMenu(menuName = "Enemy Factories/Standard", fileName = "Standard")]
 public class StandardEnemyFactory : EnemyFactory
 {
-    [SerializeField] private StandardEnemy _enemyPrefab;
+    [SerializeField] private OneDirectionEnemy _enemyPrefab;
     [SerializeField] private int _health;
     [SerializeField] private float _minSpeed;
     [SerializeField] private float _maxSpeed;

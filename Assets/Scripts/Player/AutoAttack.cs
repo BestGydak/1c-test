@@ -26,7 +26,7 @@ public class AutoAttack : MonoBehaviour
         if (!possibleTargets.Any())
             return false;
 
-        var nearestTarget = possibleTargets.GetMaxItem(collider => GetDistance(collider.transform));
+        var nearestTarget = possibleTargets.GetMinItem(collider => GetDistance(collider.transform));
         LaunchProjectile(nearestTarget.transform.position);
         _currentCooldown = _attackCooldown;
         return true;

@@ -4,25 +4,25 @@ using System.Linq;
 
 public static class EnumerableExtension
 {
-    public static T GetMaxItem<T>(this IEnumerable<T> enumerable, Func<T, float> selector)
+    public static T GetMinItem<T>(this IEnumerable<T> enumerable, Func<T, float> selector)
     {
         if(!enumerable.Any())
             throw new ArgumentException("Enumerable doesn't have any items!");
 
-        var maxValue = float.MinValue;
-        var maxItem = default(T);
+        var minValue = float.MaxValue;
+        var minItem = default(T);
         
         foreach(var item in enumerable)
         {
             var currentValue = selector(item);
-            if(maxValue < currentValue)
+            if(minValue > currentValue)
             {
-                maxValue = currentValue;
-                maxItem = item;
+                minValue = currentValue;
+                minItem = item;
             }
         }
 
-        return maxItem;
+        return minItem;
     }
 
     public static T GetRandom<T>(this IEnumerable<T> values)

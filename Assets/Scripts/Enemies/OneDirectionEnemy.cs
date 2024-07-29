@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StandardEnemy : BaseEnemy, IDamageable
+public class OneDirectionEnemy : BaseEnemy, IDamageable
 {
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private int _currentHealth;
