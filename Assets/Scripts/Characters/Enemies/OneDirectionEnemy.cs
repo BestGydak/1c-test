@@ -45,14 +45,14 @@ public class OneDirectionEnemy : BaseEnemy
         Health.Died.RemoveListener(OnDied);
     }
 
-    public override void Kill(DamageType damageType)
+    public override void Kill()
     {
-        Health.SetHealth(0, damageType);
+        Health.SetHealth(0);
     }
 
-    private void OnDied(Health _, DamageType damageType)
+    private void OnDied(Health _)
     {
-        Died.Invoke(this, damageType);
+        Died.Invoke(this);
         Destroy(gameObject);
     }
 

@@ -22,7 +22,7 @@ public class HpUI : MonoBehaviour
         _defeatChecker.HpChanged.RemoveListener(OnHpChanged);
     }
 
-    private void OnHpChanged(int prevValue, int newValue)
+    private void OnHpChanged(DefeatChecker _, int prevValue, int newValue)
     {
         ChangeHpText(newValue);
     }

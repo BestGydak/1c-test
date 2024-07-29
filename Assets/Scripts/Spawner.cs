@@ -7,16 +7,37 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private EnemyFactory enemyFactory;
     [SerializeField] private List<Transform> _spawnPoints;
+
+    [Header("Spawn Settings")]
     [SerializeField] private float _minCooldownInSeconds;
     [SerializeField] private float _maxCooldownInSeconds;
+    [SerializeField] private int _minEnemiesToSpawn;
+    [SerializeField] private int _maxEnemiesToSpawn;
     [SerializeField] private bool _startSpawnOnStart;
-    [SerializeField] private DamageType _gameDamage;
 
     private Coroutine _spawnCoroutine;
     private HashSet<BaseEnemy> _aliveEnemies = new();
+    private int _enemiesRemainToSpawn;
 
-    public UnityEvent<BaseEnemy> Spawned;
+    public UnityEvent<Spawner, BaseEnemy> Spawned;
+    public UnityEvent<Spawner> AllSpawned;
+    public UnityEvent<Spawner, int, int> EnemiesToSpawnChanged;
 
+    public IReadOnlyCollection<BaseEnemy> AliveEnemies => _aliveEnemies;
+    public int EnemiesRemainToSpawn 
+    { 
+        get => _enemiesRemainToSpawn;
+        private set
+        {
+            if(value < 0)
+            {
+                Debug.LogError("EnemiesRemainToSpawn can't be negative");
+            }
+            var prevValue = _enemiesRemainToSpawn;
+            _enemiesRemainToSpawn = value;
+            EnemiesToSpawnChanged.Invoke(this, prevValue, value);
+        }
+    }
 
     private void Start()
     {
@@ -28,6 +49,7 @@ public class Spawner : MonoBehaviour
     {
         if(_spawnCoroutine != null)
             StopCoroutine(_spawnCoroutine);
+        EnemiesRemainToSpawn = Random.Range(_minEnemiesToSpawn, _maxEnemiesToSpawn);
         _spawnCoroutine = StartCoroutine(SpawnCoroutine());
     }
     
@@ -40,18 +62,20 @@ public class Spawner : MonoBehaviour
     {
         var enemies = new List<BaseEnemy>(_aliveEnemies);
         foreach (var enemy in enemies)
-            enemy.Kill(_gameDamage);
+            enemy.Kill();
         _aliveEnemies.Clear();
     }
 
     private IEnumerator SpawnCoroutine()
     {
-        while(true)
+        while (EnemiesRemainToSpawn > 0)
         {
             SpawnEnemy();
             var cooldown = Random.Range(_minCooldownInSeconds, _maxCooldownInSeconds);
             yield return new WaitForSeconds(cooldown);
+            EnemiesRemainToSpawn--;
         }
+        AllSpawned.Invoke(this);
     }
 
     private void SpawnEnemy()
@@ -61,10 +85,10 @@ public class Spawner : MonoBehaviour
         newEnemy.transform.position = spawnPoint.position;
         _aliveEnemies.Add(newEnemy);
         newEnemy.Died.AddListener(OnDied);
-        Spawned.Invoke(newEnemy);
+        Spawned.Invoke(this, newEnemy);
     }
 
-    private void OnDied(BaseEnemy newEnemy, DamageType damageType)
+    private void OnDied(BaseEnemy newEnemy)
     {
         newEnemy.Died.RemoveListener(OnDied);
         _aliveEnemies.Remove(newEnemy);

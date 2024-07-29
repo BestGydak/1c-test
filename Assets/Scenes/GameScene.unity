@@ -176,8 +176,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0.1
   m_Points:
   - {x: -4.60606, y: -3.0321302}
-  - {x: -4.60606, y: 2.202553}
-  - {x: 4.606233, y: 2.2025533}
+  - {x: -4.60606, y: 0.45}
+  - {x: 4.606233, y: 0.45}
   - {x: 4.6062326, y: -3.0280414}
   - {x: -4.5920877, y: -3.028041}
   m_AdjacentStartPoint: {x: 0, y: 0}
@@ -651,7 +651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1540293298183706132, guid: 3af31e97d88d5654ab011cf6dde21fd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.88
+      value: -4.64
       objectReference: {fileID: 0}
     - target: {fileID: 1540293298183706132, guid: 3af31e97d88d5654ab011cf6dde21fd4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -801,7 +801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6564957880868984631, guid: 7fe931bc1b553984197976223377abfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.01
+      value: -7.02
       objectReference: {fileID: 0}
     - target: {fileID: 6564957880868984631, guid: 7fe931bc1b553984197976223377abfc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -916,6 +916,14 @@ PrefabInstance:
     - target: {fileID: 774841662030584804, guid: b33a7532d62a8f645a40aaae5cf37f47, type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956638494664750965, guid: b33a7532d62a8f645a40aaae5cf37f47, type: 3}
+      propertyPath: _maxEnemiesToSpawn
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956638494664750965, guid: b33a7532d62a8f645a40aaae5cf37f47, type: 3}
+      propertyPath: _minEnemiesToSpawn
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6158759444811827729, guid: b33a7532d62a8f645a40aaae5cf37f47, type: 3}
       propertyPath: m_RootOrder

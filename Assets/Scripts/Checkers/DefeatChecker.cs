@@ -10,8 +10,8 @@ public class DefeatChecker : MonoBehaviour
     private int _currentHp;
     private bool _hasDefeated;
  
-    public UnityEvent<int, int> HpChanged;
-    public UnityEvent Defeated;
+    public UnityEvent<DefeatChecker, int, int> HpChanged;
+    public UnityEvent<DefeatChecker> Defeated;
 
     public int CurrentHp
     {
@@ -20,7 +20,7 @@ public class DefeatChecker : MonoBehaviour
         {
             var prevHp = _currentHp;
             _currentHp = value;
-            HpChanged.Invoke(prevHp, _currentHp);
+            HpChanged.Invoke(this, prevHp, _currentHp);
             TryDefeat();
         }
     }
@@ -56,7 +56,7 @@ public class DefeatChecker : MonoBehaviour
             return false;
 
         _hasDefeated = true;
-        Defeated.Invoke();
+        Defeated.Invoke(this);
         return true;
     }
 

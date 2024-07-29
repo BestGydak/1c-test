@@ -9,7 +9,6 @@ public class FightState : State
     {
         _inputReader.EnablePlayerControls();
         _gameManager.Started.Invoke();
-        _gameManager.VictoryChecker.StartGame();
         _gameManager.DefeatChecker.StartGame();
         _gameManager.Spawner.StartSpawning();    
     }

@@ -5,10 +5,10 @@ public class Health : MonoBehaviour, IDamageable
 {
     [field: SerializeField] public int CurrentHealth { get; private set; }
 
-    public UnityEvent<Health, DamageType> Died;
+    public UnityEvent<Health> Died;
     public UnityEvent<Health, int, int> CurrentHealthChanged;
 
-    public void SetHealth(int value, DamageType damageType = null)
+    public void SetHealth(int value)
     {
         if (value == CurrentHealth)
             return;
@@ -19,12 +19,12 @@ public class Health : MonoBehaviour, IDamageable
         CurrentHealthChanged.Invoke(this, prevValue, value);
         if(value <= 0)
         {
-            Died.Invoke(this, damageType);
+            Died.Invoke(this);
         }
     }
 
-    public void Damage(int damage, DamageType damageType)
+    public void Damage(int damage)
     {
-        SetHealth(CurrentHealth - damage, damageType);
+        SetHealth(CurrentHealth - damage);
     }
 }

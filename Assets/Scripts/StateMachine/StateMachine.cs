@@ -19,9 +19,10 @@ public class StateMachine : MonoBehaviour
 
     public void SetState(State state)
     {
-        if (CurrentState != null)
-            CurrentState.OnExit();
+        var prevState = CurrentState;
         CurrentState = state;
+        if (prevState != null)
+            prevState.OnExit();
         state.OnEnter();
     }
 }

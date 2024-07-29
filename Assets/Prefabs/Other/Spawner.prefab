@@ -84,10 +84,17 @@ MonoBehaviour:
   - {fileID: 3181685064137067511}
   - {fileID: 8041024124293208864}
   _minCooldownInSeconds: 1
-  _maxCooldownInSeconds: 2
+  _maxCooldownInSeconds: 1.5
+  _minEnemiesToSpawn: 15
+  _maxEnemiesToSpawn: 20
   _startSpawnOnStart: 0
-  _gameDamage: {fileID: 11400000, guid: dcedc4ac0d45b8d4dba2e90760165787, type: 2}
   Spawned:
+    m_PersistentCalls:
+      m_Calls: []
+  AllSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  EnemiesToSpawnChanged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &2552975109594649775

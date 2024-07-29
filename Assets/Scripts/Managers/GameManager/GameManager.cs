@@ -44,13 +44,13 @@ public class GameManager : MonoBehaviour
         _stateMachine.SetState(_fightState);
     }
 
-    private void OnWon()
+    private void OnWon(VictoryChecker _)
     {
         if(_stateMachine.CurrentState != _lostState)
             _stateMachine.SetState(_winState);
     }
 
-    private void OnDefeated()
+    private void OnDefeated(DefeatChecker _)
     {
         if(_stateMachine.CurrentState != _winState)
             _stateMachine.SetState(_lostState);
