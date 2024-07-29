@@ -502,6 +502,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb79774ec0526a4d8d5014629ef7ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1874581235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2516273940465313137, guid: 434a580960f9f4b45be5c922b881b969, type: 3}
+  m_PrefabInstance: {fileID: 971656075973766670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038070882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8121600825782154414, guid: 434a580960f9f4b45be5c922b881b969, type: 3}
@@ -524,7 +529,7 @@ PrefabInstance:
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 5022782925584534163, guid: 434a580960f9f4b45be5c922b881b969, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 876899826}
     - target: {fileID: 5346395705043817927, guid: 434a580960f9f4b45be5c922b881b969, type: 3}
@@ -616,7 +621,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6807638142328319766, guid: 434a580960f9f4b45be5c922b881b969, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 876899826}
     m_RemovedComponents: []
@@ -747,6 +752,18 @@ PrefabInstance:
       objectReference: {fileID: 758135614}
     - target: {fileID: 341518359378781687, guid: 2280de8bf718e5e40a696ca98d62a7b7, type: 3}
       propertyPath: Lost.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2038070882}
+    - target: {fileID: 341518359378781687, guid: 2280de8bf718e5e40a696ca98d62a7b7, type: 3}
+      propertyPath: Started.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1874581235}
+    - target: {fileID: 341518359378781687, guid: 2280de8bf718e5e40a696ca98d62a7b7, type: 3}
+      propertyPath: Started.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 758135614}
+    - target: {fileID: 341518359378781687, guid: 2280de8bf718e5e40a696ca98d62a7b7, type: 3}
+      propertyPath: Started.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2038070882}
     - target: {fileID: 4730244735783362769, guid: 2280de8bf718e5e40a696ca98d62a7b7, type: 3}

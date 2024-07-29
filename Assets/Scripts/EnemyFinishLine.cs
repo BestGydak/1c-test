@@ -6,6 +6,7 @@ public class EnemyFinishLine : MonoBehaviour
     [SerializeField] private DamageType _gameDamage;
     [SerializeField] private SFX _enemyKillSFX;
     [SerializeField] private SoundManagerEventChannel _soundChannel;
+
     public UnityEvent<BaseEnemy> EnemyCrossed;
 
     private void OnTriggerEnter2D(Collider2D collision)

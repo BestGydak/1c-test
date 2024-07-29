@@ -12,10 +12,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private bool _startSpawnOnStart;
     [SerializeField] private DamageType _gameDamage;
 
-    public UnityEvent<BaseEnemy> Spawned;
-
     private Coroutine _spawnCoroutine;
     private HashSet<BaseEnemy> _aliveEnemies = new();
+
+    public UnityEvent<BaseEnemy> Spawned;
+
 
     private void Start()
     {

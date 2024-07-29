@@ -8,12 +8,12 @@ public class LinearProjectile : BaseProjectile
     [SerializeField] private float _liveTimeInSeconds;
     [SerializeField] private DamageType _intendedDamage;
 
-    public void Start()
+    private void Start()
     {
         Destroy(gameObject, _liveTimeInSeconds);    
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         var collisionObject = collision.gameObject;
 

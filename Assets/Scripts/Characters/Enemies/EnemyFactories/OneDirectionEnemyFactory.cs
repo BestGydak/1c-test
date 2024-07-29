@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy Factories/Standard", fileName = "One Direction")]
+[CreateAssetMenu(menuName = "Enemy Factories/One Direction", fileName = "One Direction Enemy Factory")]
 public class OneDirectionEnemyFactory : EnemyFactory
 {
     [SerializeField] private OneDirectionEnemy _enemyPrefab;

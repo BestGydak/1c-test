@@ -24,6 +24,11 @@ public class InputReader : ScriptableObject, InputActions.IPlayerActions
         _inputActions.Disable();
     }
 
+    private void OnDestroy()
+    {
+        _inputActions.Dispose();
+    }
+
     public void DisablePlayerControls()
     {
         _inputActions.Player.Disable();

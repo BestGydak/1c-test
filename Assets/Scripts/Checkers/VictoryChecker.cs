@@ -9,10 +9,10 @@ public class VictoryChecker : MonoBehaviour
     [SerializeField] private DamageType _playerDamage;
     [SerializeField] private bool _immediateStart;
 
+    private int _currentKillGoal;
+
     public UnityEvent Won;
     public UnityEvent<int, int> CurrentKillGoalChanged;
-
-    private int _currentKillGoal;
 
     public int CurrentKillGoal
     {

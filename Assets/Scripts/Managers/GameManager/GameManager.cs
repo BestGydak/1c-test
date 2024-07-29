@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private State _winState;
     [SerializeField] private State _lostState;
     [SerializeField] private State _fightState;
+    [SerializeField] private State _preGameState;
 
     public UnityEvent Won;
     public UnityEvent Lost;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _stateMachine.SetState(_preGameState);
         if(_immediateStart)
             StartGame();
     }
@@ -39,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        _stateMachine.IsRunning = true;
         _stateMachine.SetState(_fightState);
     }
 

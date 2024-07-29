@@ -12,7 +12,6 @@ public class OneDirectionEnemy : BaseEnemy
     [SerializeField] private SoundManagerEventChannel _soundChannel;
     [field: SerializeField] public Health Health { get; private set; }
 
-
     public float CurrentSpeed
     {
         get => _currentSpeed;

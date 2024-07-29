@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51606dd07d6c6b34b804055161d1eb3a, type: 3}
-  m_Name: Standard Enemy Factory
+  m_Name: One Direction Enemy Factory
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1579484897244435604, guid: 625bcfb70ac6ec7498949d9e884411ac, type: 3}
   _health: 3
